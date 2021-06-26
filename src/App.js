@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "App.css";
-import thumb from "./thumb1.jpg";
-
+import getStoryId from "./hackerNewsApi";
 //Import Components
 import Nav from "./Nav";
 
-const App = () => (
-  <div>
-    <Nav />
-    <h1 className="wow">Hello React!!!!!</h1>
-    <img src={thumb} alt="" />
-  </div>
-);
+const App = () => {
+  const [storyId, setStoryId] = useState([]);
+  useEffect(() => {
+    getStoryId()
+      .then(returnedData => setStoryId(returnedData))
+  }, [])
 
-export default App;
+  return (
+    < div >
+      <div>
+        <h5>{JSON.stringify(storyId)}</h5>
+      </div>
+    </div >)
+
+};
+
+export default App
