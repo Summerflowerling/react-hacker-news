@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "App.css";
-import { getStoryId } from "./hackerNewsApi";
-import { getStory } from "./hackerNewsApi"
-import { StoryComponent } from "./storyComponent";
+import {Story} from "../server/hackernews.server"
+
 
 const App = () => {
   return (
-    <StoryComponent />
+    <div>
+      <h1>Hello</h1>
+      <Story/>
+    </div>
   )
 };
 

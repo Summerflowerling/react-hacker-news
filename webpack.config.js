@@ -7,6 +7,15 @@ module.exports = {
     filename: "bundle.[hash].js",
     path: path.resolve(__dirname, "dist"),
   },
+  
+  devServer: {
+    proxy: {
+      '/api/v1': {
+        target: 'http://hn.algolia.com',
+        changeOrigin: true,
+      }
+  }},
+
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
@@ -15,7 +24,7 @@ module.exports = {
 
   ],
   resolve: {
-    modules: [__dirname, "src", "node_modules"],
+    modules: [__dirname, "src", "server", "node_modules"],
     extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
   },
   module: {
