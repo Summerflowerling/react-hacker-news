@@ -1,8 +1,12 @@
-# simple-react-setup
+# react-hacker-news-api
 
-A super simple react setup from scratch with all the basics that you might need.
+This app uses react and webpack to fetch data from hacker news api.
 
 ## How to use
 
 Simply download or clone the repo and use **npm install**
 To run the app use the command **npm start**
+
+### Bug to be fixed
+
+Proxy cannot redirect to hacker news api url. It added localhost port in front of the path.
