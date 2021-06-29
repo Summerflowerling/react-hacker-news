@@ -7,10 +7,8 @@ const fetch = require('node-fetch')
 export const baseUrl = `/api/v1/search?query=foo&tags=story`
 export const Story = ()=>{
     const  [info, setInfo] = useState([])
-
     useEffect(()=>{
        getData()
-     
     }, []);
 
     const getData = ()=>{
